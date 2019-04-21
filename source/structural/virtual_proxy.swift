@@ -2,7 +2,7 @@
 🍬 Virtual Proxy
 ----------------
 
-The proxy pattern is used to provide a surrogate or placeholder object, which references an underlying object. 
+The proxy pattern is used to provide a surrogate or placeholder object, which references an underlying object.
 Virtual proxy is used for loading object on demand.
 
 ### Example
@@ -11,13 +11,14 @@ protocol HEVSuitMedicalAid {
     func administerMorphine() -> String
 }
 
-class HEVSuit : HEVSuitMedicalAid {
+final class HEVSuit: HEVSuitMedicalAid {
     func administerMorphine() -> String {
-        return "Morphine aministered."
+        return "Morphine administered."
     }
 }
 
-class HEVSuitHumanInterface : HEVSuitMedicalAid {
+final class HEVSuitHumanInterface: HEVSuitMedicalAid {
+
     lazy private var physicalSuit: HEVSuit = HEVSuit()
 
     func administerMorphine() -> String {
